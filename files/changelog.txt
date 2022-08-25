@@ -1,0 +1,89 @@
+Secre Bot Changelog:
+
+1.00 | Released Beta Version Facebook Bot
+1.01 | Added Greetings and Thank you
+1.02 | Added Reactions specific words
+1.03 | Fixed some Bugs and Errors
+
+June 22, 2022 | 1.04
+-> Added Bible Verse
+-> Added Duckduckgo Search Engine
+-> Added Random Meme
+-> Added Text to Speech
+-> Greetings Changed to English and Added Mentions
+-> Added Anime Quotes
+-> Added Summarize (powered by nlpcloud)
+
+June 23, 2022 | 1.05
+-> Added Welcome and Goodbye Messages
+-> Added Brainly
+-> Added Google Search Engine
+-> Added Random Picture (Landscape)
+-> Added Removebg (Remove Background from your Image)
+
+June 24, 2022 | 1.06
+-> Added YouTube Video Downloader
+
+June 25, 2022 | 1.07
+-> Name Changed from MarkG Miguel's Bot to Mākuguren Bot
+-> Profile Picture Changed
+-> Modules Changed from ytdl-core, youtube-music-api to youtubei.js
+-> YouTube Music Improvements (Faster Processing Songs)
+-> Removed ffmpeg and other unused modules
+-> Added Lyrics (Genius Lyrics)
+-> Added Songs with Lyrics (Genius Lyrics x YouTube)
+
+June 25, 2022 | 1.08
+-> Added Pastebin (Text to link)
+
+June 27, 2022 | 1.09
+-> Added OpenAI (AI For finding answers, advise, etc.)
+-> Added Simsimi (AI for Entertaining, Trolling)
+
+June 29, 2022 | 1.10
+-> Added FB Tools: Get Thread Info
+-> Added FB Tools: Get All Threads
+-> Added FB Tools: Kick Members in Threads
+-> Added FB Tools: Getting FB Info
+-> Added FB Tools: Change Name (Group Chats only.)
+-> Added FB Tools: Change Nickname
+-> Added FB Tools: Change Emoji
+-> Added FB Tools: Promote and Demote Admins
+-> Added FB Tools: Mark as All Read (Keep my Bot Alive)
+-> Added UptimeRobot
+
+June 30, 2022 | 1.11
+-> Added Send Message to thread (for Admins Only)
+-> Command List Changed (Organized/by Category)
+-> FB Tools: Added Single or Multiple Promote to admin in One Command
+-> FB Tools: Added Single or Multiple Demote to Admin in One Command
+
+July 1, 2022 | 1.12
+-> Added Task Scheduler (Bible and Quotes of the Day)
+-> Added Pinned, ShowPinned and RemovePin.
+
+July 2, 2022 | 1.13
+-> Added YouTube Shorts Downloader
+
+July 3, 2022 | 1.14
+-> Added Unsent On and Off Switch (Admin/VIP Only)
+-> Change Welcome and Goodbye Message
+
+July 4, 2022 | 1.15
+-> Added Covid-19 Monitoring
+
+July 12, 2022 | 1.16
+-> Added JSON for Data, Settings
+-> Added Getting Instagram Profile
+-> Added Baybayin Translator
+-> Added Facts (Meme Generator)
+
+July 14, 2022 | 1.17
+-> Added Games (Pinoy Bugtong)
+-> Added Games (Guessing Word)
+
+July 15, 2022 | 1.18
+-> Added Weather (Google)
+-> Added PDF (Google)
+-> Added Custom Bible Verse
+-> Added QR Code Generator

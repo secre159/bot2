@@ -1,0 +1,108 @@
+SECRE B0T COMMANDS
+
+Prefix: _
+================
+-> SOME USEFULL TOOLS <-
+================
+_youtubedl <video title> / <ytlink>
+_ytplay <music title> / <ytlink>
+_ytdl <ytlink>
+_ytshortsdl <shortslink>
+_singalong <music title> / <ytlink>
+_lyrics <title and artist name>
+_tiktokdl <url>
+_removebg <reply to a image>
+_pastebin <text>
+_qrcode <text> <reply on a message>
+
+================
+-> IMAGE SEARCH, SEARCH ENGINE, EDUCATIONAL TOOLS <-
+================
+_wiki <word>
+_google <ask anything>
+_dsearch <ask anything>
+_summarize <sentence/paragraph>
+_brainly <question>
+_weather <country/province/city>
+_pdf <any books>
+_transbaybayin <text>
+_covid19 <country>
+
+================
+-> EXTRAS, ENTERTAINMENTS, MISCELLANEOUS <-
+================
+_meme
+_verse
+_voftheday
+_cusverse <bible verse>
+_motivation
+_quotesotd
+_landscape
+_animequote
+_saytag <message>
+_sayjap <message>
+_facts <text>
+
+================
+-> ARTIFICIAL INTELLIGENCE BOT (AI BOT) <-
+================
+Secre <ask anything>
+Ali <ask anything>
+
+================
+-> FB-IG/GC TOOLS <-
+================
+_getthread
+_getallthreads
+_getfb <@mention>
+_getmyfb
+_chanename <gc name>
+_changenn <@mention> <nickname>
+_changemoji <emoji>
+_getinstagram <username>
+
+================
+-> GC ADMIN TOOLS <-
+================
+_kick <@mention>
+_proadmin <@mention>
+_deadmin <@mention>
+
+================
+-> OTHERS <-
+================
+_about
+_changelog
+
+================
+-> GAMES <-
+================
+_bugtong
+_guessword
+_scores
+
+================
+-> EXPERIMENTAL COMMANDS <-
+================
+_pin <reply to a message>
+_showpinned
+_removepin
+
+================
+-> ADMIN COMMANDS (VIP) <-
+================
+Bot: Sleep
+Bot: Wake up
+Bot: Activate
+Bot: Kill
+Status
+RefreshAppState
+SendMsg <threadname> <message>
+Send <threadID> <message>
+Unsend: On
+Unsend: Off
+Settings
+
+================
+More Features to come SOON!
+================

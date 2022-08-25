@@ -1,0 +1,16 @@
+Secre Bot 
+
+Secre Bot is a Facebook Messenger Chatbot made using NodeJS, Axios Powered by Replit and Heroku. This is Unofficial Facebook Chat API.
+
+Follow us on my Social Media:
+
+Facebook:
+https://www.facebook.com/axczel.xhan
+
+Credits of the Following:
+-> John Paul Caigas
+-> Earl Shine Sawir
+-> John Jeremy Antiguo
+-> Lester Navarra
+-> Mark Kevin Manalo
+-> and to other Facebook Bot Developers.
