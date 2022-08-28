@@ -178,6 +178,52 @@ async function pdfsearch(query) {
 login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, api) => {
     if (err) return console.error(err);
 
+    /*====================================== AUTO ACCEPT THREAD ==============================================*/
+    function getThread() {
+        let taggs = ["OTHER", "unread"];
+        let tagg = ["PENDING", "unread"];
+        api.getThreadList(1, null, taggs, (err, list) => {
+            if (err) return console.error("error getting list");
+            if (list.length != 0) {
+                try {
+                    api.handleMessageRequest(list[0]['threadID'], true, (err) => {
+                        if (err) return console.log("HANDLE MESSAGE REQUEST ERROR");
+                        console.log('Thread Accepted')
+
+
+                        api.sendMessage(`*=================================*\n\nHello This is Axczel Bot at your service how can I help you?\n\nI'm here to monitor and serve.\nFor more info and to know me further just type >help to know me further\n\nA friendly message from the Creator\n\n*=================================*`, list[0]['threadID']);
+
+                        api.changeNickname("Axczel Bot", list[0]['threadID'], "100038878990276", (err) => {
+                            if (err) return console.error("CHANGE NICKNAME ERROR");
+                        });
+                    });
+                } catch (err) {
+
+                }
+            }
+        });
+        api.getThreadList(1, null, tagg, (err, list) => {
+            if (err) return console.error("error getting list");
+            if (list.length != 0) {
+                try {
+                    api.handleMessageRequest(list[0]['threadID'], true, (err) => {
+                        if (err) return console.log("HANDLE MESSAGE REQUEST ERROR");
+                        console.log('Thread Accepted')
+                        api.sendMessage("Hello This is Axczel Bot at your service how can I help you?\n\nI'm here to monitor and serve. For more info and to know me further just type >help\n\nA friendly message from the Creator", list[0]['threadID']);
+
+                        api.changeNickname("Axczel Bot", list[0]['threadID'], "100038878990276", (err) => {
+                            if (err) return console.error("CHANGE NICKNAME ERROR");
+                        });
+                    });
+                } catch (err) {
+
+                }
+            }
+        });
+    }
+    var x = setInterval(getThread, 90000);
+    /*====================================== AUTO ACCEPT THREAD ==============================================*/
+
     //Time Check to Avoid Bot Deads | Node Cron Task Scheduler
     cron.schedule('*/10 * * * *', () => {
         var hours = date("Asia/Manila").getHours()
@@ -207,7 +253,7 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
 
             votd("verse of the day").then((response) => {
                 if (response == null) {
-                    api.sendMessage("An error occured", "5244593602322408")
+                    api.sendMessage("An error occured", "5622523351101565")
                 } else {
                     let vresult = "Bible verse of the day:\n\n"
                     for (let i = 0; i < response.length; i++) {
@@ -241,7 +287,7 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
 
             qtotd("quotes of the day").then((response) => {
                 if (response == null) {
-                    api.sendMessage("An error occured", "5244593602322408")
+                    api.sendMessage("An error occured", "5622523351101565")
                 } else {
                     let mresult = "Quotes of the day:\n\n"
                     for (let i = 0; i < response.length; i++) {
@@ -2534,14 +2580,14 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
                                 }
                             })
                         })
-                        await new Promise(resolve => setTimeout(resolve, 7500));
+                        /*await new Promise(resolve => setTimeout(resolve, 7500));
                         api.getThreadInfo(event.threadID, (err, gc) => {
                            if (err) done(err);
                            var gcn = gc.threadName;
                            var arr = gc.participantIDs;
                            var Tmem = arr.length;
                            api.sendMessage("Group Chat Name: " + gcn + "\n\n💠 Total Member(Updated) 💠\n\n => " + Tmem + " Members", event.threadID, event.messageID)
-                        })
+                        })*/
                         break;
                 }
                 break;
