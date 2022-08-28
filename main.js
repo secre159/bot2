@@ -2541,7 +2541,7 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
                            var arr = gc.participantIDs;
                            var Tmem = arr.length;
                            api.sendMessage("Group Chat Name: " + gcn + "\n\n💠 Total Member(Updated) 💠\n\n => " + Tmem + " Members", event.threadID, event.messageID)
-                        })*/
+                        })
                         break;
                 }
                 break;
