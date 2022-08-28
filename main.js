@@ -2510,38 +2510,36 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
                         break;
 
                     case "log:unsubscribe":
-                        var id = event.logMessageData.leftParticipantFbId;
-                        api.getThreadInfo(event.threadID, (err, gc) => {
-                            if (err) done(err);
-                            api.getUserInfo(parseInt(id), (err, data) => {
-                                if (err) {
-                                    console.log(err)
-                                } else {
-                                    console.log(data)
-                                    for (var prop in data) {
-                                        if (data.hasOwnProperty(prop) && data[prop].name) {
-                                            var gcn = gc.threadName;
-                                            api.sendMessage({
-                                                body: "Thank you, " + data[prop].name + ", for joining " + gcn + "!",
-                                                mentions: [{
-                                                    tag: '@' + data[prop].name,
-                                                    id: id,
-                                                }],
-                                                attachment: fs.createReadStream(__dirname + "/media/goodbye.mp3")
-                                            }, event.threadID)
+                            var id = event.logMessageData.leftParticipantFbId;
+
+                            api.getThreadInfo(event.threadID, (err, gc) => {
+                                if (err) done(err);
+                                console.log(gc)
+                                api.getUserInfo(parseInt(id), (err, data) => {
+                                    if (err) {
+                                        console.log(err)
+                                    } else {
+                                        console.log(data)
+                                        for (var prop in data) {
+                                            if (data.hasOwnProperty(prop) && data[prop].name) {
+                                                var gcn = gc.threadName;
+                                                api.sendMessage({
+                                                    body: "Hanggang sa muli, @" + data[prop].name + " senpai🥺😥\n\nKaming lahat ng " + gcn + " ay mamimiss ka🥺😭", mentions: [{ tag: '@' + data[prop].name, id: id, }], attachment:
+                                                        fs.createReadStream(__dirname + "/goodbye.mp3")
+                                                }, event.threadID)
+                                            }
                                         }
                                     }
-                                }
+                                })
                             })
-                        })
-                        /*await new Promise(resolve => setTimeout(resolve, 7500));
-                        api.getThreadInfo(event.threadID, (err, gc) => {
-                           if (err) done(err);
-                           var gcn = gc.threadName;
-                           var arr = gc.participantIDs;
-                           var Tmem = arr.length;
-                           api.sendMessage("Group Chat Name: " + gcn + "\n\n💠 Total Member(Updated) 💠\n\n => " + Tmem + " Members", event.threadID, event.messageID)
-                        })*/
+                            await new Promise(resolve => setTimeout(resolve, 7500));
+                            api.getThreadInfo(event.threadID, (err, gc) => {
+                                if (err) done(err);
+                                var gcn = gc.threadName;
+                                var arr = gc.participantIDs;
+                                var Tmem = arr.length;
+                                api.sendMessage(gcn + "\n\n💠Total Member(Updated)💠\n\n =>" + Tmem, event.threadID, event.messageID)
+                            })
                         break;
                 }
                 break;
