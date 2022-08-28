@@ -191,9 +191,9 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
                         console.log('Thread Accepted')
 
 
-                        api.sendMessage(`*=================================*\n\nHello This is Axczel Bot at your service how can I help you?\n\nI'm here to monitor and serve.\nFor more info and to know me further just type >help to know me further\n\nA friendly message from the Creator\n\n*=================================*`, list[0]['threadID']);
+                        api.sendMessage(`*=================================*\n\nHello This is Secre Bot at your service how can I help you?\n\nI'm here to monitor and serve.\nFor more info and to know me further just type _commands to know me further\n\nA friendly message from the Creator\n\n*=================================*`, list[0]['threadID']);
 
-                        api.changeNickname("Axczel Bot", list[0]['threadID'], "100038878990276", (err) => {
+                        api.changeNickname("Secre Bot", list[0]['threadID'], "100084816763269", (err) => {
                             if (err) return console.error("CHANGE NICKNAME ERROR");
                         });
                     });
@@ -209,9 +209,9 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
                     api.handleMessageRequest(list[0]['threadID'], true, (err) => {
                         if (err) return console.log("HANDLE MESSAGE REQUEST ERROR");
                         console.log('Thread Accepted')
-                        api.sendMessage("Hello This is Axczel Bot at your service how can I help you?\n\nI'm here to monitor and serve. For more info and to know me further just type >help\n\nA friendly message from the Creator", list[0]['threadID']);
+                        api.sendMessage("Hello This is Secre Bot at your service how can I help you?\n\nI'm here to monitor and serve. For more info and to know me further just type _commands\n\nA friendly message from the Creator", list[0]['threadID']);
 
-                        api.changeNickname("Axczel Bot", list[0]['threadID'], "100038878990276", (err) => {
+                        api.changeNickname("Secre Bot", list[0]['threadID'], "100084816763269", (err) => {
                             if (err) return console.error("CHANGE NICKNAME ERROR");
                         });
                     });
