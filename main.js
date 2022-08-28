@@ -207,7 +207,7 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
 
             votd("verse of the day").then((response) => {
                 if (response == null) {
-                    api.sendMessage("An error occured", "5622523351101565")
+                    api.sendMessage("An error occured", "5244593602322408")
                 } else {
                     let vresult = "Bible verse of the day:\n\n"
                     for (let i = 0; i < response.length; i++) {
@@ -231,8 +231,42 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
         scheduled: true,
         timezone: "Asia/Manila"
     });
+ //cron auto send message
+    cron.schedule('* 13 * * *', () => {
+   api.sendMessage('Good afternoon☀️. The afternoon is that time in the day when you can fulfill that big dream of yours.\nHave the best afternoon💕',threadID);
+ }, {
+   scheduled: true,
+   timezone: "Asia/Manila"
+ });
+     cron.schedule('0 12 * * *', () => {
+   api.sendMessage('Happy Lunch☀️. kain na kayo 😁',threadID);
+ }, {
+   scheduled: true,
+   timezone: "Asia/Manila"
+ });
 
-    //Quotes of the Day | Node Cron Task Scheduler
+cron.schedule('0 * * * *', function() { api.sendMessage('🟢Currently Axczel Bot is running in service🟢\n⚠️Monitor Interval Every Hour⚠️');
+});
+ 
+ cron.schedule('* 8 * * *', () => {
+   let v = verse()
+                        v.then((response) => {
+                            api.sendMessage("Good Morning😘🥰\n\nFrom the book of " + response.bookname + " chapter " + response.chapter + " verse " + response.verse + "\n\n" + response.text, event.threadID)
+                        }).catch((err) => {
+                            console.log(err)
+                        })
+ }, {
+   scheduled: true,
+   timezone: "Asia/Manila"
+ });
+    const listenEmitter = api.listen(async (err, event) => {
+        if (err) return console.error(err);
+        let sdrid = event.senderID;
+        let trid = event.threadID;
+        let msgid = event.messageID
+        let input = event.body;
+
+//Quotes of the Day | Node Cron Task Scheduler
     cron.schedule('0 7 * * *', () => {
         api.getThreadList(20, null, ['INBOX'], (err, data) => {
             if (err) return console.error("Error [Thread List Cron]: " + err)
@@ -241,7 +275,7 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
 
             qtotd("quotes of the day").then((response) => {
                 if (response == null) {
-                    api.sendMessage("An error occured", "5622523351101565")
+                    api.sendMessage("An error occured", "5244593602322408")
                 } else {
                     let mresult = "Quotes of the day:\n\n"
                     for (let i = 0; i < response.length; i++) {
@@ -2546,6 +2580,7 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
                 }
                 break;
             //End of Welcome Greetings
-        }
+           };
+        })
     });
 });
