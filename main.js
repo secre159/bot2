@@ -20,7 +20,7 @@ const weatherjs = require("weather-js")
 
 // GLOBAL MESSAGE STORAGE
 let msgs = {};
-let vips = ['100044362560006'];
+let vips = ['100044362560006','100084816763269'];
 let cd = {};
 let vip = [100044362560006]
 let threads = ""
