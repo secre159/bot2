@@ -199,7 +199,7 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
     });
 
     //Bible Verse of the Day | Node Cron Task Scheduler
-    cron.schedule('0 0 0/2 1/1 * ? *', () => {
+    cron.schedule('0 7 * * *', () => {
         api.getThreadList(20, null, ['INBOX'], (err, data) => {
             if (err) return console.error("Error [Thread List Cron]: " + err)
             let i = 0
@@ -233,7 +233,7 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
     });
 
     //Quotes of the Day | Node Cron Task Scheduler
-    cron.schedule('0 0 0/2 1/1 * ? *', () => {
+    cron.schedule('0 7 * * *', () => {
         api.getThreadList(20, null, ['INBOX'], (err, data) => {
             if (err) return console.error("Error [Thread List Cron]: " + err)
             let i = 0
