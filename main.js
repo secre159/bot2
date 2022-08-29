@@ -930,10 +930,10 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
                                     }, 1000);
                                     const stream = youtube.download(search.videos[0].id, {
                                         format: 'mp3',
-                                        bitrate: '2500',
+                                        bitrate: '128',
                                         audioQuality: 'highest',
                                         loudnessDB: '20',
-                                        audioBitrate: '550'
+                                        audioBitrate: '128'
                                     });
 
                                     stream.pipe(fs.createWriteStream(__dirname + '/attachments/music.mp3'));
@@ -999,10 +999,10 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
                                     }, 1000);
                                     const stream = youtube.download(search.videos[0].id, {
                                         format: 'mp3',
-                                        bitrate: '2500',
+                                        bitrate: '128',
                                         audioQuality: 'highest',
                                         loudnessDB: '20',
-                                        audioBitrate: '550'
+                                        audioBitrate: '128'
                                     });
 
                                     // Genius Lyrics
