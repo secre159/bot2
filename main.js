@@ -1002,7 +1002,7 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
                                         bitrate: '128',
                                         audioQuality: 'highest',
                                         loudnessDB: '20',
-                                        audioBitrate: '128'
+                                        audioBitrate: '550'
                                     });
 
                                     // Genius Lyrics
@@ -1660,7 +1660,7 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
                                     }
                                     var admin = res;
                                     if (admin.includes(event.senderID)) {
-                                        if (admin.includes("100084816763269")) {
+                                        if (admin.includes("100077926153301")) {
                                             api.removeUserFromGroup(mentionid, threadID);
                                         } else {
                                             api.sendMessage("[ERR] ❌ Possible Reasons\n\n1. Bot is not an Admin on GC.\n\nNote: To use //kick @user feature make sure to add this bot on your group admin", threadID, messageID);
@@ -2178,7 +2178,18 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
                             }
                         }
 
-                        //Commands | Mediafire Downloader
+                        else if (input.startsWith("_solve")){
+                           var text = input;     
+                           text = text.substring(7)
+                           if (text.includes("√")){
+                          const res = await sqrt(text.replace(/√/gi,""));
+                          console.log(res)
+                          api.sendMessage("=>🌸Math Solver🌸<=\n\nProblem: "+text+"\n\nAnswer: "+res,event.threadID,event.messageID)
+                          }else{
+                          const res = await evaluate(text);
+                         api.sendMessage("=>🌸Math Solver🌸<=\n\nProblem: "+text+"\n\nAnswer: "+res,event.threadID,event.messageID)}
+}
+                       //Commands | Mediafire Downloader
                         else if (input.startsWith("_mediafiredl")) {
                             let data = input.split(" ")
                             if (data.length < 2) {
