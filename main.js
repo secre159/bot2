@@ -2177,18 +2177,6 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
                                 api.sendMessage("Wrong! the correct answer is " + games.GuessingWord.word, event.threadID, event.messageID);
                             }
                         }
-
-                        else if (input.startsWith("_solve")){
-                           var text = input;     
-                           text = text.substring(7)
-                           if (text.includes("√")){
-                          const res = await sqrt(text.replace(/√/gi,""));
-                          console.log(res)
-                          api.sendMessage("=>🌸Math Solver🌸<=\n\nProblem: "+text+"\n\nAnswer: "+res,event.threadID,event.messageID)
-                          }else{
-                          const res = await evaluate(text);
-                         api.sendMessage("=>🌸Math Solver🌸<=\n\nProblem: "+text+"\n\nAnswer: "+res,event.threadID,event.messageID)}
-}
                        //Commands | Mediafire Downloader
                         else if (input.startsWith("_mediafiredl")) {
                             let data = input.split(" ")
