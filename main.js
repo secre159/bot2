@@ -1660,7 +1660,7 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
                                     }
                                     var admin = res;
                                     if (admin.includes(event.senderID)) {
-                                        if (admin.includes("100077926153301")) {
+                                        if (admin.includes("100084816763269")) {
                                             api.removeUserFromGroup(mentionid, threadID);
                                         } else {
                                             api.sendMessage("[ERR] ❌ Possible Reasons\n\n1. Bot is not an Admin on GC.\n\nNote: To use //kick @user feature make sure to add this bot on your group admin", threadID, messageID);
